@@ -10,7 +10,7 @@ public class DbConnection {
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/book-management?serverTimezone=UTC","root","root");
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/book-management?serverTimezone=UTC","root","");
         }catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
