@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="userData" class="com.test.entity.User" scope="request"></jsp:useBean>
+<jsp:useBean id="userData" class="in.purabtech.entity.User" scope="request"></jsp:useBean>
 <jsp:setProperty property="*" name="userData"/>
 <jsp:forward page="register"></jsp:forward>
 </body>
