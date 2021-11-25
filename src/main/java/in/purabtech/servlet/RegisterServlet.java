@@ -30,8 +30,10 @@ public class RegisterServlet extends HttpServlet {
         try {
             Connection con = DbConnection.getConnection();
             Statement st = con.createStatement();
-            String query="insert into users (user_name,user_pass,full_name,email, phone) "
-                    + "values ('"+user.getUsername()+"','"+user.getPassword()+"','"+user.getFullName()+"','"+user.getEmail()+"','"+user.getPhone()+"')";
+            String query="insert into users (user_name,user_pass,full_name,email, phone,role_id) "
+                    + "values ('"+user.getUsername()+"','"+user.getPassword()+"','"+user.getFullName()+"','"+user.getEmail()+"','"+user.getPhone()+"',1)";
+            System.out.println(query);
+
             int i=st.executeUpdate(query);
             if(i>0) {
                 response.getWriter().append("User added successfully...");

@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="in.purabtech.entity.UserDetails"%>
+<%@page import="in.purabtech.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -59,8 +59,8 @@ if(userid == null){
 <table>
 <tr><td>Sl.No </td><td>Name</td><td>Email</td><td>Phone</td>  </tr>
 <%
-List<UserDetails> users=(List<UserDetails>)session.getAttribute("list");
-for(UserDetails user : users){
+List<User> users=(List<User>)session.getAttribute("list");
+for(User user : users){
 %>
 <tr><td><%=user.getId() %> </td><td><%=user.getFullName() %> </td><td> <%=user.getEmail()%></td><td><%=user.getPhone() %></td></tr>
 
