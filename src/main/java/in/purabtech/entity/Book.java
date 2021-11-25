@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name = "books")
@@ -35,7 +36,7 @@ public class Book {
 
     @Column(name="date_purchase", length =40)
     @Temporal(TemporalType.DATE)
-    private Calendar purchageDate;
+    private Date purchaseDate;
 
     @Column(name="number_copies", length =10)
     private int numberOfCopies;

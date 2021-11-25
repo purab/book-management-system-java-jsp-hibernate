@@ -140,7 +140,7 @@ public class MainServlet extends HttpServlet {
             manager.getTransaction().begin();
             Book book = manager.find(Book.class, id);
             manager.remove(book);
-            List<Book> list=manager.createQuery("select a from BookDetails a", Book.class).getResultList();
+            List<Book> list=manager.createQuery("select a from Book a", Book.class).getResultList();
             manager.getTransaction().commit();
             request.setAttribute("books", list);
 
@@ -179,7 +179,7 @@ public class MainServlet extends HttpServlet {
         EntityManager manager = emf.createEntityManager();
         try {
             manager.getTransaction().begin();
-            List<Book> list=manager.createQuery("select a from BookDetails a", Book.class).getResultList();
+            List<Book> list=manager.createQuery("select a from Book a", Book.class).getResultList();
             manager.getTransaction().commit();
             request.setAttribute("books", list);
         } catch (Exception e) {
@@ -204,7 +204,7 @@ public class MainServlet extends HttpServlet {
             manager.getTransaction().begin();
             book.setStatus("NEW");
             manager.persist(book);
-            List<Book> listb=manager.createQuery("select a from BookDetails a", Book.class).getResultList();
+            List<Book> listb=manager.createQuery("select a from Book a", Book.class).getResultList();
             request.setAttribute("books", listb);
             manager.getTransaction().commit();
         } catch (Exception e) {
@@ -359,8 +359,8 @@ public class MainServlet extends HttpServlet {
             query.setParameter("p", user.getPassword());
             User dbuser = null;
             dbuser = (User) query.getSingleResult();
-            System.out.println("222222222222");
-            if (dbuser ==null && dbuser.getUsername() != null) {
+            System.out.println("222222222222"+dbuser);
+            if (dbuser !=null && dbuser.getUsername() != null) {
                 List<Book> listb=manager.createQuery("select a from Book a", Book.class).getResultList();
                 request.setAttribute("books", listb);
                 if(dbuser.getRole().getRole().equals("ADMIN")) {
@@ -374,7 +374,7 @@ public class MainServlet extends HttpServlet {
                 //response.sendRedirect(view);
             } else {
 
-                System.out.println("#############################");
+                session.setAttribute("succMsg", "No user found...");
 
                 response.sendRedirect(view);
             }

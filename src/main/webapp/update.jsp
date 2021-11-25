@@ -1,4 +1,4 @@
-<%@page import="in.purabtech.entity.UserDetails"%>
+<%@page import="in.purabtech.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 <div class="container">
 
 <%
-UserDetails user= (UserDetails)request.getAttribute("user");
+User user= (User)request.getAttribute("user");
 
 %>
 <form action="updateAction.jsp" method="post" >

@@ -1,5 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="in.purabtech.entity.User"%>
+<%@ page import="in.purabtech.service.BookService" %>
+<%@ page import="in.purabtech.entity.Book" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -41,15 +43,22 @@ if(userid == null){
 <th>Book Name</th><th> Author Name</th><th>Edition</th><th>Number of Copies</th>
 <th>Request Book</th>
 </tr></thead>
-<c:forEach items="${books}" var="book" varStatus="loop" >
-<tr>
-<td>${loop.count} </td>
-	<td>${book.bookName} </td><td>${book.bookAuthor}   </td>
-	<td>${book.edition} </td>
-	<td> ${book.numberOfCopies}   </td>
-	<td><a href="updateBook?bookid=${book.bookId}">Request</a> </td>
-	</tr>
-</c:forEach>
+	<%
+	 BookService dao=new BookService();
+		List<Book> books = dao.getAllBooks();
+	%>
+	<c:if test="${!books.isEmpty() }">
+		<c:forEach items="${books}" var="book" varStatus="loop" >
+			<tr>
+				<td>${loop.count} </td>
+				<td>${book.bookName} </td><td>${book.bookAuthor}   </td>
+				<td>${book.edition} </td>
+				<td> ${book.numberOfCopies}   </td>
+				<td><a href="updateBook?bookid=${book.bookId}">Request</a> </td>
+			</tr>
+		</c:forEach>
+	</c:if>
+
  </table>
 </div>
 

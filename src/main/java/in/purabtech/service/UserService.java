@@ -19,7 +19,7 @@ public class UserService {
 
         try {
             st = con.createStatement();
-            ResultSet rs= st.executeQuery("select *from user_login");
+            ResultSet rs= st.executeQuery("select *from users");
             while (rs.next()) {
                 User user= new User();
                 user.setEmail(rs.getString("email"));

@@ -1,6 +1,6 @@
-<%@page import="in.purabtech.entity.BookDetails"%>
+<%@page import="in.purabtech.entity.Book"%>
 <%@page import="java.util.List"%>
-<%@page import="in.purabtech.entity.UserDetails"%>
+<%@page import="in.purabtech.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>

@@ -25,9 +25,12 @@ public class LogoutServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-        HttpSession session = request.getSession(false);
-        session.removeAttribute("userid");
-        session.invalidate();
+        HttpSession session = request.getSession();
+        if(session !=null) {
+            session.removeAttribute("userid");
+            session.invalidate();
+        }
+
         System.out.println("logout called");
         response.sendRedirect("index.jsp");
     }

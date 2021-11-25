@@ -1,6 +1,6 @@
-<%@page import="in.purabtech.entity.BookDetails"%>
+<%@page import="in.purabtech.entity.Book"%>
 <%@page import="java.util.List"%>
-<%@page import="in.purabtech.entity.UserDetails"%>
+<%@page import="in.purabtech.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ if(userid == null){
 <p> <a href="admin.jsp">Add Books</a>&nbsp; <a href="viewBooks">View Books</a>&nbsp;   <a href="logout"> logout</a> </p>
 <div style="margin-left: 50mm;" class="">
 <%
-BookDetails book = (BookDetails)request.getAttribute("book");
+Book book = (Book)request.getAttribute("book");
 %>
 <form action="updateBookAction.jsp" method="post" >
 <table>

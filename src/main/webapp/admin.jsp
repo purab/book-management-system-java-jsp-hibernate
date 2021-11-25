@@ -1,5 +1,7 @@
 <%@page import="java.util.List"%>
-<%@page import="in.purabtech.entity.UserDetails"%>
+<%@page import="in.purabtech.entity.User"%>
+<%@ page import="in.purabtech.service.BookService" %>
+<%@ page import="in.purabtech.entity.Book" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -67,6 +69,10 @@ if(userid == null){
 <th>Book Name</th><th> Author Name</th><th>Edition</th><th>Number of Copies</th>
 <th>Update</th><th>delete</th>
 </tr></thead>
+	<%
+		BookService dao=new BookService();
+		List<Book> books = dao.getAllBooks();
+	%>
 <c:forEach items="${books}" var="book" varStatus="loop" >
 <tr>
 <td>${loop.count} </td>
