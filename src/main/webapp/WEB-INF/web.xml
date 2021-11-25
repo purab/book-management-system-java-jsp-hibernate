@@ -4,4 +4,13 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+    
+    <filter>
+        <filter-name>appFilter</filter-name>
+        <filter-class>in.purabtech.hooks.AppFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>appFilter</filter-name>
+        <url-pattern>/app/list</url-pattern>
+    </filter-mapping>
 </web-app>
