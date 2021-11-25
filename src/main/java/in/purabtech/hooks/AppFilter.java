@@ -23,14 +23,13 @@ public class AppFilter implements Filter {
      * @see Filter#destroy()
      */
     public void destroy() {
-        // TODO Auto-generated method stub
+        // Code will come here
     }
 
     /**
      * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
      */
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        // TODO Auto-generated method stub
         // place your code here
         HttpServletResponse res=(HttpServletResponse) response;
         HttpServletRequest req= (HttpServletRequest) request;
@@ -53,7 +52,7 @@ public class AppFilter implements Filter {
      * @see Filter#init(FilterConfig)
      */
     public void init(FilterConfig fConfig) throws ServletException {
-        // TODO Auto-generated method stub
+        // Not required to change
     }
 
 }

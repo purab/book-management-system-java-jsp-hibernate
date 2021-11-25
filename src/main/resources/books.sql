@@ -3,8 +3,6 @@ CREATE TABLE `book-management`.`students` ( `id` INT(11) NOT NULL AUTO_INCREMENT
 CREATE TABLE `book-management`.`roles` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `role_name` VARCHAR(255) NOT NULL , `role_description` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 CREATE TABLE `book-management`.`book_transaction_history` ( `transaction_id` INT(11) NOT NULL AUTO_INCREMENT , `member_id` INT(11) NOT NULL , `book_id` INT(11) NOT NULL , `date_issue` TIMESTAMP NOT NULL , `returned_date` TIMESTAMP NULL , `due_date` TIMESTAMP NULL , `fine_collected` INT(11)  NULL , `transaction_status` VARCHAR(255)  NULL , PRIMARY KEY (`transaction_id`)) ENGINE = InnoDB;
 CREATE TABLE `book-management`.`books` ( `book_id` INT(11) NOT NULL AUTO_INCREMENT , `book_author` VARCHAR(255) NOT NULL , `book_name` VARCHAR(255) NOT NULL , `book_price` VARCHAR(255) NULL , `book_isbn_number` VARCHAR(255) NULL , `status` VARCHAR(255) NULL , `edition` VARCHAR(255) NULL , `date_purchase` TIMESTAMP NULL , `number_copies` INT(11) NOT NULL , PRIMARY KEY (`book_id`)) ENGINE = InnoDB;
-ALTER TABLE `users` ADD `role_id` INT(11) NOT NULL AFTER `phone`;
-ALTER TABLE `users` CHANGE `user_name` `user_name` VARCHAR(255) NOT NULL;
 
 insert into roles(id,role_name, role_description) values (1,'ADMIN', 'Admin role' );
 insert into roles(id,role_name, role_description) values (2,'USER', 'User role' );
